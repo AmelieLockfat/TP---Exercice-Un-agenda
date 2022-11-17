@@ -10,7 +10,8 @@ import java.time.temporal.ChronoUnit;
  * a given number of occurrences
  */
 public class FixedTerminationEvent extends RepetitiveEvent {
-
+    LocalDate Termination;
+    long numberOfOccurrences;
     
     /**
      * Constructs a fixed terminationInclusive event ending at a given date
@@ -28,9 +29,7 @@ public class FixedTerminationEvent extends RepetitiveEvent {
      */
     public FixedTerminationEvent(String title, LocalDateTime start, Duration duration, ChronoUnit frequency, LocalDate terminationInclusive) {
          super(title, start, duration, frequency);
-        // TODO : implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
-
+         this.Termination=terminationInclusive;
     }
 
     /**
@@ -45,12 +44,11 @@ public class FixedTerminationEvent extends RepetitiveEvent {
      * <LI>ChronoUnit.WEEKS for weekly repetitions</LI>
      * <LI>ChronoUnit.MONTHS for monthly repetitions</LI>
      * </UL>
-     * @param numberOfOccurrences the number of occurrences of this repetitive event
+     * @param nbOfOccurrences the number of occurrences of this repetitive event
      */
-    public FixedTerminationEvent(String title, LocalDateTime start, Duration duration, ChronoUnit frequency, long numberOfOccurrences) {
+    public FixedTerminationEvent(String title, LocalDateTime start, Duration duration, ChronoUnit frequency, long nbOfOccurrences) {
         super(title, start, duration, frequency);
-        // TODO : implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
+        this.numberOfOccurrences=nbOfOccurrences;
     }
 
     /**
@@ -58,13 +56,11 @@ public class FixedTerminationEvent extends RepetitiveEvent {
      * @return the termination date of this repetitive event
      */
     public LocalDate getTerminationDate() {
-        // TODO : implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");   
+       return Termination;
     }
 
     public long getNumberOfOccurrences() {
-        // TODO : implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
+       return numberOfOccurrences;
     }
         
 }
