@@ -27,12 +27,14 @@ public class Agenda {
      */
     public List<Event> eventsInDay(LocalDate day) {
         ArrayList<Event> evnmtcejour = new ArrayList<Event>();
-        for (Event e : myEvents) {
-            if ((e.getStart().toLocalDate()==day) || (e.getStart().toLocalDate().plus(e.getDuration()).compareTo(day)>0)){
-                evnmtcejour.add(e);
+        for (int i = 0; i < myEvents.size(); i++) {
+            if(myEvents.get(i).isInDay(day)){
+                evnmtcejour.add(myEvents.get(i));
+
             }
         }
         return evnmtcejour;
     }
+
 } //ferme la classe
 
