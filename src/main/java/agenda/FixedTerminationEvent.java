@@ -56,7 +56,11 @@ public class FixedTerminationEvent extends RepetitiveEvent {
      * @return the termination date of this repetitive event
      */
     public LocalDate getTerminationDate() {
-       return Termination;
+        if (Termination==null) {
+            LocalDate df = myStart.toLocalDate() .plus(numberOfOccurrences-1,frequency);
+            Termination = df;
+        }
+        return Termination;
     }
 
     public long getNumberOfOccurrences() {
