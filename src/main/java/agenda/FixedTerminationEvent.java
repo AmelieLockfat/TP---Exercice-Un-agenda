@@ -73,4 +73,6 @@ public class FixedTerminationEvent extends RepetitiveEvent {
         }
        return numberOfOccurrences;
 }
+
+
 }
