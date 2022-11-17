@@ -12,12 +12,12 @@ public class Event {
     /**
      * The starting time of the event
      */
-    protected LocalDateTime myStart;
+    public LocalDateTime myStart;
 
     /**
      * The durarion of the event 
      */
-    private Duration myDuration;
+    protected Duration myDuration;
 
 
     /**
