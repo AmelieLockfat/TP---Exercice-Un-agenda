@@ -42,7 +42,7 @@ public class Event {
     public boolean isInDay(LocalDate aDay) {
         boolean test = false ;
         LocalDate finevnmt = myStart.plus(myDuration).toLocalDate();
-        if ( (myStart.toLocalDate().equals(aDay) ) || (finevnmt.equals(aDay))){
+        if ( (myStart.toLocalDate().equals(aDay) ) || (finevnmt.isAfter(aDay) && myStart.toLocalDate().isBefore(aDay)) || (finevnmt.equals(aDay))){
             test=true;
         }
         return test;
